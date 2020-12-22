@@ -1,7 +1,7 @@
 ---
 title: "STATS 250 Lab 2"
 author: "Lab Dream Team"
-date: "Week of 9/7/2020"
+date: "Week of 9/4/2020"
 output:
   html_document:
     toc: true
@@ -74,7 +74,7 @@ R doesn't like this! Notice that there's an error that says `object 'X' not foun
 We can also *assign* data to names in R. Remember last week? We ran this code:
 
 ```{r lastWeekData}
-penguins <- read.csv(url("https://raw.githubusercontent.com/STATS250SBI/palmerpenguins/master/inst/extdata/penguins_NArm.csv"))
+penguins <- read.csv("https://raw.githubusercontent.com/STATS250SBI/palmerpenguins/master/inst/extdata/penguins_NArm.csv")
 ```
 
 Here, we stored the result of `read.csv()` as an object called `penguins`. `penguins` is what's called a "data frame" in R (in lecture, you might hear it called a "data matrix" or "data set"). So, now when we want to use the data, we can just tell R about `penguins` instead of having to write that whole `read.csv()` line again and again.
@@ -86,7 +86,7 @@ Now, when you look in the environment pane of R Studio (the "Environment" tab in
 #### What's a CSV file?
 CSV stands for "comma separated values" and is a commonly used file type for storing data. Here's a sample of what a .csv file looks like:
 ```{r whatsaCSV}
-write.csv(head(penguins))
+write.csv(head(penguins), row.names = FALSE)
 ```
 Each row of the file (when you knit this document, rows are denoted by ## in the output, but ## is not in the actual file) is an "observation" or "case", and consists of one or more variables whose *values* are *separated* by *commas* (hey, look at that). The first row contains the variable names. You don't need to know these specific details, but it will be helpful to understand what a .csv file is for these labs.
 
